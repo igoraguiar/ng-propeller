@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~roboto-fontface/css/roboto/roboto-fontface.css";
+@import "~material-design-icons/iconfont/material-icons.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~select2/dist/css/select2.css";
+@import "~select2-bootstrap-theme/dist/select2-bootstrap.css";
+@import "~propellerkit/dist/css/propeller.css";
+@import "~propellerkit-select2/css/pmd-select2.css";
+@import "~datatables.net-bs/css/dataTables.bootstrap.css";
+@import "~datatables.net-responsive-bs/css/responsive.bootstrap.css";
+@import "~datatables.net-select-dt/css/select.dataTables.css";
+@import "~propellerkit/components/data-table/css/pmd-datatable.css";
+@import "themes/css/propeller-theme.css";
+@import "themes/css/propeller-admin.css";
+@import "themes/css/custom.css";

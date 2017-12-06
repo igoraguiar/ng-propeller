@@ -1,0 +1,26 @@
+a.custom-sidebar-item i.material-icons {
+    color: #c9c8c8;
+}
+
+a.custom-sidebar-item span {
+    vertical-align: bottom;
+}
+
+
+/*-- Sidebar Stacked--*/
+
+aside[width=274]~.wrapper .constructor,
+.pmd-sidebar-slide-push.pmd-sidebar-open~.pmd-content {
+    margin-left: 274;
+}
+
+@media (max-width: 767px) {
+    .pmd-sidebar-slide-push.pmd-sidebar-open~.wrapper .constructor,
+    .pmd-sidebar-slide-push.pmd-sidebar-open~.pmd-content {
+        margin-left: 0;
+    }
+}
+
+div[app-root] {
+    height: 100%;
+}
