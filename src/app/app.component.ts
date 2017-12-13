@@ -9,6 +9,7 @@ import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class AppComponent implements AfterViewInit {
     title = 'app';
     items = []
+    showAccordion = false
 
     constructor() {
 
