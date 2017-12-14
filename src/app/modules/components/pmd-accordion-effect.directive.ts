@@ -5,7 +5,7 @@ declare var $: any
 @Directive({
     selector: 'a[data-toggle="collapse"]'
 })
-export class PmdCollapseEffectDirective {
+export class PmdAccordionEffectDirective {
 
     constructor() { }
 

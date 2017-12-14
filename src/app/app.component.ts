@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { PmdAlertService } from './modules/components/pmd-alert.service';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent implements AfterViewInit {
     items = []
     showAccordion = false
 
-    constructor() {
+    constructor(private pmdAlertService: PmdAlertService) {
 
     }
 
@@ -22,7 +23,10 @@ export class AppComponent implements AfterViewInit {
     }
 
     addItem() {
-        this.items.push(`Item ${this.items.length + 1}`)
+        this.items.push(`Item_${this.items.length + 1}`)
     }
 
+    showAlert() {
+        this.pmdAlertService.showAlert('center', 'bottom', 'fadeInDown', 'Teste', 'success', 'Close', true)
+    }
 }

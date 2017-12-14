@@ -10,37 +10,42 @@
 
 
 <button class="btn" (click)="showAccordion = !showAccordion">Show Accordion</button>
-<div *ngIf="showAccordion">
-<div *ngFor="let i of items" class="panel-group pmd-accordion" id="accordion7" role="tablist" aria-multiselectable="true"> 
+<div *ngIf="showAccordion" class="pmd-z-depth-1">
+<div *ngFor="let i of items; let even = even" class="panel-group pmd-accordion pmd-z-depth-1 {{even ? 'bg-info' : 'bg-success'}}" id="accordion{{i}}" role="tablist" aria-multiselectable="true"> 
     <div class="panel panel-default"> 
         <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title"> 
-                <a data-toggle="collapse" data-parent="#accordion7" href="#collapseOne7" aria-expanded="false" aria-controls="collapseOne7" data-expandable="false" class="collapsed"> Collapsible Group Item #1 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a> 
+                <a data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseOne{{i}}" aria-expanded="false" attr.aria-controls="collapseOne{{i}}" data-expandable="false" class="collapsed"> Collapsible Group Item #1 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a> 
             </h4>
         </div>
-        <div id="collapseOne7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+        <div id="collapseOne{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">The word "accordion" typically conjures a mental image of your favorite polka band. However that’s not what we are talking about when referring to accordion menu. Although polka music can offer a rip-snorting good time, the term is associated with something different in the realm of web design. User interface accordions might refer to menus, widgets, or content areas which expand like the musical instrument. These interfaces have grown a lot more popular in recent years with the expansion of JavaScript.</div>
         </div>
     </div>
     <div class="panel panel-default"> 
         <div class="panel-heading" role="tab" id="headingTwo">
             <h4 class="panel-title"> 
-                <a data-toggle="collapse" data-parent="#accordion7" href="#collapseTwo7" aria-expanded="false" aria-controls="collapseTwo7" data-expandable="false" class="collapsed"> Collapsible Group Item #2 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
+                <a data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseTwo{{i}}" aria-expanded="false" attr.aria-controls="collapseTwo{{i}}" data-expandable="false" class="collapsed"> Collapsible Group Item #2 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
             </h4>
         </div>
-        <div id="collapseTwo7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+        <div id="collapseTwo{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">Accordions are popular because they allow developers to force large amounts of content into tiny spaces on the page. Granted these content displays also require dynamic effects for switching between page elements – so there are pros and cons to accordions. </div>
         </div>
     </div>
     <div class="panel panel-default"> 
         <div class="panel-heading" role="tab" id="headingThree">
             <h4 class="panel-title"> 
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion7" href="#collapseThree7" aria-expanded="false" aria-controls="collapseThree7" data-expandable="false"> Collapsible Group Item #3 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
+                <a class="collapsed" data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseThree{{i}}" aria-expanded="false" attr.aria-controls="collapseThree{{i}}" data-expandable="false"> Collapsible Group Item #3 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
             </h4>
         </div>
-        <div id="collapseThree7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+        <div id="collapseThree{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">Not every website needs an accordion menu and you certainly won’t find them all the time. But that’s no reason to ignore the concept entirely. The purpose of an accordion menu is to manage an overabundance of content through dynamic switching. Each interface works differently based on the circumstances of the layout. </div>
         </div>
     </div>
 </div>
+</div>
+
+<div *ngIf="showAccordion" class="pmd-z-depth-1 alerts panel panel-default">
+    <button class="btn btn-default" (click)="showAlert()"> Alert Service </button>
+    <button type="button" data-positionx="left" data-positiony="top" data-effect="fadeInUp" data-message="You have 1 messages" data-duration="3000" class="btn pmd-ripple-effect btn-default pmd-btn-raised pmd-alert-toggle">Top Left</button>
 </div>
