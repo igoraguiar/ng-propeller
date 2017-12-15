@@ -9,43 +9,425 @@
 <button class="btn pmd-xtra-shake-effect">OK</button>
 
 
-<button class="btn" (click)="showAccordion = !showAccordion">Show Accordion</button>
-<div *ngIf="showAccordion" class="pmd-z-depth-1">
-<div *ngFor="let i of items; let even = even" class="panel-group pmd-accordion pmd-z-depth-1 {{even ? 'bg-info' : 'bg-success'}}" id="accordion{{i}}" role="tablist" aria-multiselectable="true"> 
-    <div class="panel panel-default"> 
-        <div class="panel-heading" role="tab" id="headingOne">
-            <h4 class="panel-title"> 
-                <a data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseOne{{i}}" aria-expanded="false" attr.aria-controls="collapseOne{{i}}" data-expandable="false" class="collapsed"> Collapsible Group Item #1 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a> 
-            </h4>
+<button class="btn" (click)="components.accordion = !components.accordion">Toggle Accordion</button>
+<button class="btn" (click)="components.alert = !components.alert">Toggle Alert</button>
+<button class="btn" (click)="components.checkbox = !components.checkbox">Toggle checkbox</button>
+<button class="btn" (click)="components.dropdown = !components.dropdown">Toggle dropdown</button>
+
+<div *ngIf="components.accordion" class="pmd-z-depth-1">
+    <div *ngFor="let i of items; let even = even" class="panel-group pmd-accordion pmd-z-depth-1 {{even ? 'bg-info' : 'bg-success'}}" id="accordion{{i}}" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseOne{{i}}" aria-expanded="false" attr.aria-controls="collapseOne{{i}}" data-expandable="false" class="collapsed"> Collapsible Group Item #1 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
+                </h4>
+            </div>
+            <div id="collapseOne{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">The word "accordion" typically conjures a mental image of your favorite polka band. However that’s not what we are talking about when referring to accordion menu. Although polka music can offer a rip-snorting good time, the term is associated
+                    with something different in the realm of web design. User interface accordions might refer to menus, widgets, or content areas which expand like the musical instrument. These interfaces have grown a lot more popular in recent years
+                    with the expansion of JavaScript.</div>
+            </div>
         </div>
-        <div id="collapseOne{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
-            <div class="panel-body">The word "accordion" typically conjures a mental image of your favorite polka band. However that’s not what we are talking about when referring to accordion menu. Although polka music can offer a rip-snorting good time, the term is associated with something different in the realm of web design. User interface accordions might refer to menus, widgets, or content areas which expand like the musical instrument. These interfaces have grown a lot more popular in recent years with the expansion of JavaScript.</div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseTwo{{i}}" aria-expanded="false" attr.aria-controls="collapseTwo{{i}}" data-expandable="false" class="collapsed"> Collapsible Group Item #2 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
+                </h4>
+            </div>
+            <div id="collapseTwo{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">Accordions are popular because they allow developers to force large amounts of content into tiny spaces on the page. Granted these content displays also require dynamic effects for switching between page elements – so there are pros and
+                    cons to accordions. </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseThree{{i}}" aria-expanded="false" attr.aria-controls="collapseThree{{i}}" data-expandable="false"> Collapsible Group Item #3 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
+                </h4>
+            </div>
+            <div id="collapseThree{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+                <div class="panel-body">Not every website needs an accordion menu and you certainly won’t find them all the time. But that’s no reason to ignore the concept entirely. The purpose of an accordion menu is to manage an overabundance of content through dynamic switching.
+                    Each interface works differently based on the circumstances of the layout. </div>
+            </div>
         </div>
     </div>
-    <div class="panel panel-default"> 
-        <div class="panel-heading" role="tab" id="headingTwo">
-            <h4 class="panel-title"> 
-                <a data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseTwo{{i}}" aria-expanded="false" attr.aria-controls="collapseTwo{{i}}" data-expandable="false" class="collapsed"> Collapsible Group Item #2 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
-            </h4>
-        </div>
-        <div id="collapseTwo{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
-            <div class="panel-body">Accordions are popular because they allow developers to force large amounts of content into tiny spaces on the page. Granted these content displays also require dynamic effects for switching between page elements – so there are pros and cons to accordions. </div>
-        </div>
-    </div>
-    <div class="panel panel-default"> 
-        <div class="panel-heading" role="tab" id="headingThree">
-            <h4 class="panel-title"> 
-                <a class="collapsed" data-toggle="collapse" attr.data-parent="#accordion{{i}}" href="#collapseThree{{i}}" aria-expanded="false" attr.aria-controls="collapseThree{{i}}" data-expandable="false"> Collapsible Group Item #3 <i class="material-icons md-dark pmd-sm pmd-accordion-arrow">keyboard_arrow_down</i></a>
-            </h4>
-        </div>
-        <div id="collapseThree{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
-            <div class="panel-body">Not every website needs an accordion menu and you certainly won’t find them all the time. But that’s no reason to ignore the concept entirely. The purpose of an accordion menu is to manage an overabundance of content through dynamic switching. Each interface works differently based on the circumstances of the layout. </div>
-        </div>
-    </div>
-</div>
 </div>
 
-<div *ngIf="showAccordion" class="pmd-z-depth-1 alerts panel panel-default">
+<div *ngIf="components.alert" class="pmd-z-depth-1 alerts panel panel-default">
     <button class="btn btn-default" (click)="showAlert()"> Alert Service </button>
     <button type="button" data-positionx="left" data-positiony="top" data-effect="fadeInUp" data-message="You have 1 messages" data-duration="3000" class="btn pmd-ripple-effect btn-default pmd-btn-raised pmd-alert-toggle">Top Left</button>
+</div>
+
+<div *ngIf="components.checkbox" class="pmd-z-depth-1 checkboxes panel panel-default">
+    <div class="checkbox pmd-default-theme">
+        <label class="pmd-checkbox pmd-checkbox-ripple-effect">
+            <input type="checkbox" value="">
+            <span> Option one is this and that&mdash;be sure to include why it's great</span> 
+        </label>
+    </div>
+</div>
+
+<div *ngIf="components.dropdown" class="container dropdowns panel panel-default pmd-z-depth-1">
+    
+    <!-- Bootstrap Dropdown -->
+    <section *ngIf="false"  class="row component-section">
+        
+        <!-- dropdown types title and description -->
+        <div class="col-md-3">
+            <div id="bootstrap-dropdown">
+                <h2>Bootstrap Dropdown</h2>
+            </div>
+            <p>Dropdown is toggleable, contextual overlay for displaying lists of links and more. It is made interactive with the included Bootstrap dropdown JavaScript plugin.</p>
+        </div> <!-- dropdown types title and description end-->
+        
+        <!--Dropdown types code and example -->
+        <div class="col-md-9">
+            <div class="component-box">
+                <!-- dropdown types example  --> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pmd-card pmd-z-depth pmd-card-custom-view"> 
+                            <div class="pmd-card-body">
+                                <div class="row">
+                                    <!-- Example single danger button -->
+                                    <div class="col-md-12">
+                                        <div class="dropdown">
+                                          <a data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Dropdown trigger
+                                            <span class="caret"></span>
+                                          </a>
+                                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                              <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                            <li><div class="dropdown-divider"></div></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                          </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- dropdown types example end -->
+            </div>
+        </div> <!--Dropdown types code and example end -->
+        
+    </section> <!-- Bootstrap Dropdown types end -->
+    
+    <!-- Propeller Dropdown -->
+    <section class="row component-section">
+        
+        <!-- dropdown types title and description -->
+        <div class="col-md-3">
+            <div id="types">
+                <h2>Propeller Dropdown</h2>
+            </div>
+            <p>Propeller Dropdown consists of Bootstrap HTML structure with Propeller customized classes based on material design standards. </p>	
+            <p><strong>Types - </strong>Based on the type of content, Propeller Dropdown can be categorized into three types: with header, with divider, and with disabled links.</p>
+        </div> <!-- dropdown types title and description end-->
+        
+        <!--Dropdown types code and example -->
+        <div class="col-md-9">
+            <div class="component-box">
+                <!-- dropdown types example  --> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pmd-card pmd-z-depth pmd-card-custom-view"> 
+                            <div class="pmd-card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn pmd-ripple-effect btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">Dropdown with Header <span class="caret"></span></button>
+                                            <ul aria-labelledby="dropdownMenu2" role="menu" class="dropdown-menu">
+                                                <li class="dropdown-header" role="presentation">Dropdown header</li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Something else here</a></li>
+                                                <li class="dropdown-header" role="presentation">Dropdown header</li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Separated link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div *ngIf="false"  class="col-md-4">
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn pmd-ripple-effect btn-primary dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-expanded="true">Dropdown With Divider <span class="caret"></span></button>
+                                            <ul aria-labelledby="dropdownMenuDivider" role="menu" class="dropdown-menu">
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Something else here</a></li>
+                                                <li class="divider" role="presentation"></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Separated link</a></li>
+                                            </ul>
+                                        </span>
+                                     </div>
+                                    <div *ngIf="false"  class="col-md-4">
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn pmd-ripple-effect btn-primary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">Dropdown with disabled link <span class="caret"></span></button>
+                                            <ul aria-labelledby="dropdownMenu3" role="menu" class="dropdown-menu">
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Regular link</a></li>
+                                                <li class="disabled" role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Disabled link</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- dropdown types example end -->
+            
+            </div>
+        </div> <!--Dropdown types code and example end -->
+        
+    </section> <!-- Propeller Dropdown end -->
+
+    <!-- different direction dropdown -->
+    <section *ngIf="false"  class="row component-section">
+        
+        <!-- different direction dropdown title and description -->
+        <div class="col-md-3">
+            <div id="direction">
+                <h2>Dropdown with Directions</h2>
+            </div>
+             <p>Dropdown can start from different directions such as from bottom left, bottom right, top left, top right. Add <code>.dropdown-menu-right</code> to make the dropdown open from bottom-right, <code>.pmd-dropdown-menu-top-left</code> to make the dropdown open from top-left and <code>.pmd-dropdown-menu-top-right</code> to make the dropdown open from top-right. </p>
+        </div> <!-- different direction dropdown title and description end-->
+        
+        <!--different direction dropdown code and example -->
+        <div class="col-md-9">
+            <div class="component-box">
+                <!-- different direction dropdown example -->		
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pmd-card pmd-z-depth pmd-card-custom-view"> 
+                            <div class="pmd-card-body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <p>Bottom Left Direction</p>
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button" id="dropdownMenuBottomLeft" data-toggle="dropdown" aria-expanded="true"><i class="material-icons pmd-sm">more_vert</i></button>
+                                            <ul aria-labelledby="dropdownMenu2" role="menu" class="dropdown-menu">
+                                                <li class="dropdown-header" role="presentation">Dropdown header</li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Something else here</a></li>
+                                                <li class="dropdown-header" role="presentation">Dropdown header</li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Separated link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>Bottom Right Direction</p>		
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button" id="dropdownMenuBottomRight" data-toggle="dropdown" aria-expanded="true"><i class="material-icons pmd-sm">more_vert</i></button>
+                                            <ul aria-labelledby="dropdownMenuDivider" role="menu" class="dropdown-menu dropdown-menu-right">
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Something else here</a></li>
+                                                <li class="divider" role="presentation"></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Separated link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>Top Left Direction</p>	
+                                        <span class="dropdown pmd-dropdown dropup clearfix">
+                                            <button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button" id="dropdownMenuTopLeft" data-toggle="dropdown" aria-expanded="true"><i class="material-icons pmd-sm">more_vert</i></button>
+                                            <ul aria-labelledby="dropdownMenu3" role="menu" class="dropdown-menu pmd-dropdown-menu-top-left">
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Regular link</a></li>
+                                                <li class="disabled" role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Disabled link</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>Top Right Direction</p>	
+                                        <span class="dropdown pmd-dropdown dropup clearfix">
+                                            <button class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary" type="button" id="dropdownMenuTopRight" data-toggle="dropdown" aria-expanded="true"><i class="material-icons pmd-sm">more_vert</i></button>
+                                            <ul aria-labelledby="dropdownMenu3" role="menu" class="dropdown-menu pmd-dropdown-menu-top-right">
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Regular link</a></li>
+                                                <li class="disabled" role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Disabled link</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- different direction dropdown example end -->          
+                
+            </div>
+        </div> <!--different direction dropdown code and example end-->
+    </section> <!-- different direction dropdown end -->
+    
+    <!-- Dropdown Hover -->
+    <section *ngIf="false"  class="row component-section">
+        
+        <!-- dropdown hover title and description -->
+        <div class="col-md-3">
+            <div id="hover">
+                <h2>Dropdown with Hover event</h2>
+            </div>
+            <p>In this case, we are showing the dropdown on the hover of a particular button. In order to open the dropdown on hover, add <code>.pmd-dropdown-hover</code> to the button.</p>
+        </div> <!-- dropdown hover title and description end -->
+        
+        <!--Dropdown hover code and example -->
+        <div class="col-md-9">
+            <div class="component-box">
+                <!-- dropdown hover example --> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pmd-card pmd-z-depth pmd-card-custom-view"> 
+                            <div class="pmd-card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p>Hover with header</p>
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn pmd-ripple-effect btn-primary dropdown-toggle pmd-dropdown-hover" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">Dropdown with header <span class="caret"></span></button>
+                                            <ul aria-labelledby="dropdownMenu2" role="menu" class="dropdown-menu">
+                                                <li class="dropdown-header" role="presentation">Dropdown header</li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Something else here</a></li>
+                                                <li class="dropdown-header" role="presentation">Dropdown header</li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Separated link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>Hover with divider</p>
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn pmd-ripple-effect btn-primary dropdown-toggle pmd-dropdown-hover" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-expanded="true">Dropdown with divider <span class="caret"></span></button>
+                                            <ul aria-labelledby="dropdownMenuDivider" role="menu" class="dropdown-menu">
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another action</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Something else here</a></li>
+                                                <li class="divider" role="presentation"></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Separated link</a></li>
+                                            </ul>
+                                        </span>
+                                     </div>
+                                    <div class="col-md-4">
+                                        <p>Hover with disabled menu items</p>
+                                        <span class="dropdown pmd-dropdown clearfix">
+                                            <button class="btn pmd-ripple-effect btn-primary dropdown-toggle pmd-dropdown-hover" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">Dropdown with disabled link <span class="caret"></span></button>
+                                            <ul aria-labelledby="dropdownMenu3" role="menu" class="dropdown-menu">
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Regular link</a></li>
+                                                <li class="disabled" role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Disabled link</a></li>
+                                                <li role="presentation"><a href="javascript:void(0);" tabindex="-1" role="menuitem">Another link</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- dropdown hover example end -->
+                
+            </div>
+        </div> <!--Dropdown hover code and example end -->			
+    </section> <!--Dropdwon Hover ends -->
+    
+    <!-- Configuration starts-->		
+    <section *ngIf="false" class="row component-section">
+        <div class="col-md-3">
+            <div id="config">
+            <h2>Configuration Options</h2>
+            </div>
+            <p>The Propeller CSS classes apply various predefined visual enhancements to the dropdown. The table lists the available classes and their effects.</p>
+        </div>
+        <div class="col-md-9">
+            <!--Propeller Class Configuration card start -->
+            <div class="pmd-card pmd-table-card-responsive">
+                <div class="pmd-table-card"> 
+                    <table class="table pmd-table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Propeller Class</th>
+                                <th>Effect</th>
+                                <th>Remark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="Class"><code>.dropdown-menu</code></td>
+                                <td data-title="Effect">Used to create a dropdown menu.</td>
+                                <td data-title="Remark">Required</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>.dropdown-menu-right</code></td>
+                                <td data-title="Effect">Used when you want the dropdown menu to open from bottom right.</td>
+                                <td data-title="Remark">Optional</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>.pmd-dropdown-menu-top-left</code></td>
+                                <td data-title="Effect">Used when you want the dropdown menu to open from top left.</td>
+                                <td data-title="Remark">Optional</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>.pmd-dropdown-menu-top-right</code></td>
+                                <td data-title="Effect">Used when you want the dropdown menu to open from top right.</td>
+                                <td data-title="Remark">Optional</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>.dropdown-toggle</code></td>
+                                <td data-title="Effect">Add this class to the button for open and close of the dropdown menu.</td>
+                                <td data-title="Remark">Required</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>.pmd-dropdown-hover</code></td>
+                                <td data-title="Effect">Add this class to the button to open the dropdown menu on hover.</td>
+                                <td data-title="Remark">Optional</td>
+                            </tr>                                    
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--Propeller Class Configuration card end -->
+            
+        </div>
+    </section><!-- Configuration ends-->		 
+    
+    <!-- Events starts-->		
+    <section *ngIf="false" class="row component-section">
+        <div class="col-md-3">
+            <div id="events">
+                <h2>Events</h2>
+            </div>
+            <p>All dropdown events are fired at the <code>.dropdown-menu's</code> parent element. All dropdown events have a <code>relatedTarget</code> property, whose value is the toggling anchor element. See <a href="http://getbootstrap.com/javascript/#dropdowns" target="_blank">here</a> for more documentation on this.</p>
+        </div>
+        <div class="col-md-9">
+            <div class="pmd-card pmd-table-card-responsive">
+                <div class="pmd-table-card"> 
+                    <table class="table pmd-table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Event Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-title="Class"><code>show.bs.dropdown</code></td>
+                                <td data-title="Effect">This event fires immediately when the show instance method is called.</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>shown.bs.dropdown</code></td>
+                                <td data-title="Effect">This event is fired when the dropdown has been made visible to the user (will wait for CSS transitions, to complete).</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>hide.bs.dropdown</code></td>
+                                <td data-title="Effect">This event is fired immediately when the hide instance method has been called.</td>
+                            </tr>
+                            <tr>
+                                <td data-title="Class"><code>hidden.bs.dropdown</code></td>
+                                <td data-title="Effect">This event is fired when the dropdown has finished being hidden from the user (will wait for CSS transitions, to complete).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section> <!-- Events ends-->
+    
 </div>

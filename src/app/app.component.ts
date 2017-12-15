@@ -10,7 +10,12 @@ import { PmdAlertService } from './modules/components/pmd-alert.service';
 export class AppComponent implements AfterViewInit {
     title = 'app';
     items = []
-    showAccordion = false
+    components = {
+        accordion: false,
+        dropdown: false,
+        checkbox: false,
+        alert: false
+    }
 
     constructor(private pmdAlertService: PmdAlertService) {
 
